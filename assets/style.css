@@ -1,1 +1,47 @@
-:root{--bg:#0b1212;--fg:#e8f0ef}body{margin:0;padding:24px;font-family:Inter,system-ui,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,Arial,sans-serif;background:var(--bg);color:var(--fg)}h1{font-size:22px;margin:0 0 12px}p{opacity:.9}code{background:#11191a;padding:2px 6px;border-radius:6px}
+:root{--bg:#0b1212;--fg:#e8f0ef;--muted:#9fb4b1;--card:#12201e;--accent:#5bd3bd}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:Inter,system-ui,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,Arial,sans-serif;background:var(--bg);color:var(--fg)}
+a{color:var(--accent);text-decoration:none}
+.header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px}
+h1{font-size:22px;margin:0}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap}
+.toolbar input,.toolbar select{padding:10px 12px;border:1px solid #21433c;background:#0f1918;color:var(--fg);border-radius:10px;min-width:140px}
+.toolbar button{padding:10px 14px;border:0;background:var(--accent);color:#04231e;border-radius:10px;font-weight:700;cursor:pointer}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#18322e;color:var(--muted);font-size:12px;margin-left:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;margin-top:12px}
+.card{
+  background:var(--card);
+  border:1px solid #1b2f2b;
+  border-radius:16px;
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  text-align:center;
+}
+.card .artist-name {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--muted);
+}
+.card img, .card .no-image {
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+  border:1px solid #1f3a33;
+  background:#091312;
+}
+.card .no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+}
+.card h3{ margin:6px 0 0 0; font-size:18px; line-height:1.4 }
+.card .date, .card .location { font-size: 14px; color: var(--muted); }
+.card .location { margin-bottom: 8px; }
+.card .tags{ display:flex; gap:6px; flex-wrap:wrap; justify-content:center; }
+.tag{background:#0e1b19;border:1px solid #234d45;color:#9ad9ce;font-size:11px;padding:3px 8px;border-radius:999px}
+.footer{margin-top:18px;color:var(--muted);font-size:12px}
+.empty{opacity:.7;padding:24px;text-align:center;border:1px dashed #284642;border-radius:12px}

@@ -3,35 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>자우림·김윤아 공연 도감 (미니)</title>
+  <title>자우림·김윤아 공연 도감</title>
   <link rel="stylesheet" href="assets/style.css" />
+  <!-- CSV 파싱용 (가벼운 라이브러리) -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body>
-  <h1>공연 도감 (미니)</h1>
-  <p>CSV 파일 위치: <code>data/concerts_master.csv</code></p>
-  <p id="count">읽는 중…</p>
+  <header class="header">
+    <h1>자우림·김윤아 공연 도감 <span class="badge">GitHub Pages</span></h1>
+    <div class="toolbar">
+      <input id="q" placeholder="검색: 제목/장소/시리즈/출처" />
+      <select id="year"></select>
+      <select id="artist"></select>
+      <select id="city"></select>
+      <select id="etype"></select>
+      <button id="clear">초기화</button>
+    </div>
+  </header>
 
+  <div class="badge" id="count">0개 공연</div>
 
-  <p id="count">읽는 중…</p>
-  <table id="concertTable" border="1" cellpadding="5">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>가수명</th>
-        <th>년도</th>
-        <th>날짜</th>
-        <th>공연 장소</th>
-        <th>공연명</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <main id="list" class="grid"></main>
 
+  <footer class="footer">
+    <p>데이터: <code>data/concerts_master.csv</code> · 포스터: <code>media/posters/</code></p>
+  </footer>
 
-
-
-  
-  
   <script src="assets/app.js"></script>
 </body>
 </html>
